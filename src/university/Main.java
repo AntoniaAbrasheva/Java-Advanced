@@ -1,0 +1,37 @@
+package university;
+
+public class Main {
+    public static void main(String[] args) {
+        // TODO
+        University university = new University(10);
+
+        Student student = new Student("John", "Smith", "Astrology");
+        Student studentTwo = new Student("Anna", "Cameron", "Geometry");
+        Student studentThree = new Student("Samy", "Johnson", "Algebra");
+        Student studentFour = new Student("Rihanna", "Fenty", "Music");
+        Student studentFive = new Student("Ellie", "Goulding", "Music");
+
+        System.out.println(student);
+
+
+        String register = university.registerStudent(student);
+        System.out.println(university.getCapacity()); // 10
+        System.out.println(register); // Added student John Smith
+        String registerTwo = university.registerStudent(studentTwo);
+        String registerThree = university.registerStudent(studentThree);
+        String registerFour = university.registerStudent(studentFour);
+
+        String dismissed = university.dismissStudent(student);
+        System.out.println(dismissed); // Removed student John Smith
+        String dismissedTwo = university.dismissStudent(studentFive);
+        System.out.println(dismissedTwo);
+
+
+        System.out.println(university.getStudent("Rihanna", "Fenty"));
+        System.out.println(university.getStudentCount());
+        System.out.println(university.getStatistics());
+
+
+
+    }
+}
